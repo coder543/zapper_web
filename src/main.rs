@@ -2,7 +2,7 @@
 
 #[macro_use]
 extern crate zapper;
-use zapper::{ast, compile, optimizer, tokenizer};
+use zapper::{ast, compile, optimizer, tokenizer, Bytecode};
 
 #[macro_use]
 extern crate yew;
@@ -37,6 +37,7 @@ enum OutputMode {
     Rendered,
     UnoptAST,
     OptAST,
+    Bytecode,
 }
 
 struct Model {
@@ -100,6 +101,16 @@ impl Model {
                 let ast = ast::parse(tokenizer)?;
                 let ast = optimizer::optimize(ast, &env);
                 write!(&mut self.output, "{:#?}", ast).unwrap();
+            }
+            OutputMode::Bytecode => {
+                let tokenizer = tokenizer::Tokenizer::new(&self.template);
+                let ast = ast::parse(tokenizer)?;
+                let ast = optimizer::optimize(ast, &env);
+                write!(
+                    &mut self.output,
+                    "{:#?}",
+                    Bytecode::from_ast(ast, &env).unwrap()
+                ).unwrap();
             }
         }
 
@@ -216,7 +227,15 @@ impl Renderable<Context, Model> for Model {
                     checked=self.output_mode == OutputMode::OptAST,
                     oninput=|_e: InputData| Msg::ChangeMode(OutputMode::OptAST),
                     />
-                <label for="optast",>{ "Optimized AST " }</label><br/><br/>
+                <label for="optast",>{ "Optimized AST " }</label>
+
+                <input type="radio",
+                    id="bytecode",
+                    name="outputmode",
+                    checked=self.output_mode == OutputMode::Bytecode,
+                    oninput=|_e: InputData| Msg::ChangeMode(OutputMode::Bytecode),
+                    />
+                <label for="bytecode",>{ "Bytecode" }</label><br/><br/>
 
                 <textarea rows=5,
                     value=&self.template,
