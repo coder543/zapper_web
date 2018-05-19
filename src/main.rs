@@ -69,11 +69,11 @@ impl Model {
                     bytecode.render(person, &mut self.output).unwrap();
                 }
 
-                if self.output.len() > 3000000 {
-                    self.output.truncate(3000000);
+                if self.output.len() > 500000 {
+                    self.output.truncate(500000);
                     write!(
                         self.output,
-                        "... truncated to 3,000,000 characters to keep browser from becoming sluggish."
+                        "... truncated to 500,000 characters to keep browser from becoming sluggish."
                     ).unwrap();
                 }
 
