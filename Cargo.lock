@@ -308,7 +308,7 @@ dependencies = [
 
 [[package]]
 name = "zapper"
-version = "0.1.0"
+version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "zapper_derive 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -329,7 +329,7 @@ version = "0.1.0"
 dependencies = [
  "stdweb 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "yew 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "zapper 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "zapper 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [metadata]
@@ -373,5 +373,5 @@ dependencies = [
 "checksum winapi-i686-pc-windows-gnu 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
 "checksum winapi-x86_64-pc-windows-gnu 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
 "checksum yew 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ceea11c6bda0b76da4b437a1ea3191c7e27a5eb634388b745e07055291b0c22b"
-"checksum zapper 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "8622367f203551f69597c3b06171477c9d3034dc7e137a73cdfd3eafc93e63c2"
+"checksum zapper 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "00d078d35ae667ae66acb997f880adeeada863d6a696318267641a316da4771e"
 "checksum zapper_derive 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "65caa5daf9e1437e97166454eb8b37a75ab4dcf79a7e257e79ccaee49a7047ce"
