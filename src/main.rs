@@ -210,6 +210,7 @@ impl Renderable<Context, Model> for Model {
                     name="outputmode",
                     checked=self.output_mode == OutputMode::Rendered,
                     oninput=|_e: InputData| Msg::ChangeMode(OutputMode::Rendered),
+                    onclick=|_e: MouseData| Msg::ChangeMode(OutputMode::Rendered),
                     />
                 <label for="rendered",>{ "Rendered " }</label>
 
@@ -218,6 +219,7 @@ impl Renderable<Context, Model> for Model {
                     name="outputmode",
                     checked=self.output_mode == OutputMode::UnoptAST,
                     oninput=|_e: InputData| Msg::ChangeMode(OutputMode::UnoptAST),
+                    onclick=|_e: MouseData| Msg::ChangeMode(OutputMode::UnoptAST),
                     />
                 <label for="unoptast",>{ "Unoptimized AST " }</label>
 
@@ -226,6 +228,7 @@ impl Renderable<Context, Model> for Model {
                     name="outputmode",
                     checked=self.output_mode == OutputMode::OptAST,
                     oninput=|_e: InputData| Msg::ChangeMode(OutputMode::OptAST),
+                    onclick=|_e: MouseData| Msg::ChangeMode(OutputMode::OptAST),
                     />
                 <label for="optast",>{ "Optimized AST " }</label>
 
@@ -234,6 +237,7 @@ impl Renderable<Context, Model> for Model {
                     name="outputmode",
                     checked=self.output_mode == OutputMode::Bytecode,
                     oninput=|_e: InputData| Msg::ChangeMode(OutputMode::Bytecode),
+                    onclick=|_e: MouseData| Msg::ChangeMode(OutputMode::Bytecode),
                     />
                 <label for="bytecode",>{ "Bytecode" }</label><br/><br/>
 
