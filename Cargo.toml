@@ -1,0 +1,9 @@
+[package]
+authors = ["Josh Leverette <coder543@gmail.com>"]
+name = "zapper_web"
+version = "0.1.0"
+
+[dependencies]
+stdweb = "0.4.6"
+yew = "0.3.0"
+zapper = "0.1.0"
