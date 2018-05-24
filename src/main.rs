@@ -106,11 +106,7 @@ impl Model {
                 let tokenizer = tokenizer::Tokenizer::new(&self.template);
                 let ast = ast::parse(tokenizer)?;
                 let ast = optimizer::optimize(ast, &env);
-                write!(
-                    &mut self.output,
-                    "{:#?}",
-                    Bytecode::from_ast(ast, &env).unwrap()
-                ).unwrap();
+                write!(&mut self.output, "{:#?}", Bytecode::from_ast(ast, &env)?).unwrap();
             }
         }
 
