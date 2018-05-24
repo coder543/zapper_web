@@ -134,8 +134,6 @@ enum Msg {
 }
 
 impl Component<Context> for Model {
-    // Some details omitted. Explore the examples to get more.
-
     type Msg = Msg;
     type Properties = ();
 
